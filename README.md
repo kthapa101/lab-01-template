@@ -7,7 +7,7 @@ To complete this lab, follow the instructions in [lab-01.md](lab-01.md) ([PDF ve
 
 ## Turning in your work
 - At the top of `main.py` and in the `answers.md` file, **include your name**.
-- Once you have pushed your final submission to GitHub, go to Canvas and submit a link to your repository to the Canvas assignment for this recitation. 
+- Once you have pushed your final submission to GitHub, go to Canvas and submit a link to your repository to the Canvas assignment for this lab. 
 
 ## Using Git 
 - [Clone] your lab repository to your local device.
@@ -25,7 +25,7 @@ To complete this lab, follow the instructions in [lab-01.md](lab-01.md) ([PDF ve
 ## Running and testing your code
 - You can run the tests using `pytest`. If you need to, install `pytest`. On your terminal:
   + `$ pip3 install pytest`
-  + You may also have to install other python modules such as `tabulate` or other imported modules as you work through these recitations.
+  + You may also have to install other python modules such as `tabulate` or other imported modules as you work through these labs.
 - It's usually best to run only one test at a time. To run tests, from the command-line, execute:
   + `$ pytest main.py` to run all tests
   + `$ pytest main.py::test_one` to just run `test_one`
@@ -36,11 +36,11 @@ To complete this lab, follow the instructions in [lab-01.md](lab-01.md) ([PDF ve
 
 ## About Markdown
 
-We use Markdown extensively in these recitations. Markdown is a great way to easily add formatting to simple text documents.
+We use Markdown extensively in these labs. Markdown is a great way to easily add formatting to simple text documents.
 
 Here is a [cheatsheet] for markdown syntax.
 
-You will notice in the recitation documents that you can format mathematical expressions in markdown. To do so, wrap them in dollar signs. You can use [latex syntax] within the dollar signs. 
+You will notice in the lab documents that you can format mathematical expressions in markdown. To do so, wrap them in dollar signs. You can use [latex syntax] within the dollar signs. 
 
 For example, the run time of our first example, linear search, this semester is $c_1n + c_2n + c_4 \in O(n)$. 
 
