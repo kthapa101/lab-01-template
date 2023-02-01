@@ -68,6 +68,10 @@ That said, don't forget the twin prime pair (3, 5) which is the exception to the
     ```
     **Enter your answer in answers.md.**
 
+## Wrapping Up
+
+Before pushing to github, comment out all code and function calls that you make outside of the defined functions. Otherwise, they may break the GitHub tests. Benchmarking your twin prim generation is especially problematic as you will cause the testing process to time out.
+
 ## Epilogue
 
 A major topic of interest in number theory are prime and twin prime counting functions. While it is beyond of the scope of this lab and course - this isn't a number theory course after all - with your functions, you could reproduce, verify, and explore some of the known (and unknown) patterns and relationships.
