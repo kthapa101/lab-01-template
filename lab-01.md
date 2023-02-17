@@ -55,7 +55,7 @@ That said, don't forget the twin prime pair (3, 5) which is the exception to the
 
 10. Test that your function is correct by calling from the command-line `pytest main.py::test_count_twin_primes`
 
-11. What is largest pair of twin primes that you were able to generate, and how long did it take? You can benchmark your code using python's `time` module:
+11. Now try to generate large pairs of twin primes. What is largest pair of twin primes that you were able to generate, and how long did it take? You can benchmark your code using python's `time` module:
     ```python
     import time
     
