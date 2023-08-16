@@ -25,7 +25,7 @@ As you know, a prime number is an integer which is only divisble by 1 and itself
 
 5. Now that you have `is_prime` implemented, implement a function `generate_primes` which takes in as a parameter an upper bound and prints out all primes less than the upper bound.
 
-6. Now implement a function `count_primes`. This is very similar to `generate_primes` except that rather than printing the primes, it counts them. `count_primes` takes in as a parameter and upper bound and returns the number of primes less than that bound. **(7 pts)**
+6. Now implement a function `count_primes`. This is very similar to `generate_primes` except that rather than printing the primes, it counts them. `count_primes` takes in a parameter, an upper bound, and returns the number of primes less than that bound. **(7 pts)**
 
 7. Test that your function is correct by calling from the command-line `pytest main.py::test_count_primes`
 
@@ -51,7 +51,7 @@ That said, don't forget the twin prime pair (3, 5) which is the exception to the
 
 8. Implement a function `generate_twin_primes` which takes in as a parameter an upper bound and prints out all pairs of twin primes less than that bound. A pair should be printed only if both its primes are less than the bound.
 
-9. As we did for basic prime numbers, now lets count them. Implement a function `count_twin_primes` which takes in as a parameter an upper bound and returns the number of pairs of twin primes less than that bound. A pair should only be included if both its primes are less than the bound. **(7 pts)**
+9. As we did for basic prime numbers, now lets count them. Implement a function `count_twin_primes` which takes in a parameter, an upper bound, and returns the number of pairs of twin primes less than that bound. A pair should only be included if both its primes are less than the bound. **(7 pts)**
 
 10. Test that your function is correct by calling from the command-line `pytest main.py::test_count_twin_primes`
 
