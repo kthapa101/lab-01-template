@@ -16,43 +16,34 @@ def is_divisible_by(num, i):
         return False
     #pass # remove this line
 
-def is_prime(number):
-    if number <= 1:
-        return False
-    for i in range(2, int(number**0.5) + 1):
-        if number % i == 0:
-            return False
-    return True
-
-# Test the function
-num = 8
-if is_prime(num):
-    print(f"{num} is a prime number.")
-else:
-    print(f"{num} is not a prime number.")
-
 def is_prime(num):
-    # Handle edge cases
     if num <= 1:
         return False
-    if num <= 3:
-        return True
-    if num % 2 == 0 or num % 3 == 0:
-        return False
-    
-    # Check for factors from 5 to sqrt(n)
-    i = 5
-    while i * i <= num:
-        if num % i == 0 or num % (i + 2) == 0:
+    for i in range(2, int(num**0.5) + 1):
+        if num % i == 0:
             return False
-        i += 6
     return True
-is_prime(3)
 
 def generate_primes(upper_bound):
-    # TO-DO
-    # Implement this function
-    pass # remove this line
+    if upper_bound < 2:
+        return []  # No primes less than 2
+
+    # Initialize a boolean array to keep track of prime status of numbers
+    is_prime = [True] * (upper_bound + 1)
+    is_prime[0] = is_prime[1] = False  # 0 and 1 are not prime numbers
+
+    p = 2
+    while p * p <= upper_bound:
+        if is_prime[p]:
+            # Mark all multiples of p as non-prime
+            for multiple in range(p * p, upper_bound + 1, p):
+                is_prime[multiple] = False
+        p += 1
+
+    # Collect all prime numbers
+    primes = [num for num, prime in enumerate(is_prime) if prime]
+    return primes
+
 
 def count_primes(upper_bound):
     count = 0
@@ -61,15 +52,52 @@ def count_primes(upper_bound):
             count += 1
     return count
 
+
 def generate_twin_primes(upper_bound):
-    # TO-DO
-    # Implement this function
-    pass # remove this line
+    #all prime numbers up to the limit
+    primes = generate_primes(upper_bound)
+    
+    # Find and return twin prime pairs
+    twin_primes = [(primes[i], primes[i + 1]) for i in range(len(primes) - 1) if primes[i + 1] - primes[i] == 2]
+    
+    return twin_primes
 
 def count_twin_primes(upper_bound):
-    # TO-DO
-    # Implement this function
-    pass # remove this line
+    # Get all prime numbers up to the upper_bound
+    primes = generate_primes(upper_bound)
+    
+    # Count twin prime pairs
+    count = 0
+    for i in range(len(primes) - 1):
+        if primes[i + 1] - primes[i] == 2:
+            count += 1
+    
+    return count 
+
+def largest_twin_primes(upper_bound):
+    # Get all prime numbers up to the limit
+    primes = generate_primes(upper_bound)
+    
+    # Find and return the largest twin prime pair
+    largest_twin = None
+    for i in range(len(primes) - 1):
+        if primes[i + 1] - primes[i] == 2:
+            largest_twin = (primes[i], primes[i + 1])
+    
+    return largest_twin
+
+a = largest_twin_primes(100)
+print(a)
+
+import time
+    
+start = time.time()
+largest_twin_primes(10)
+end = time.time()
+
+elasped_time_ms = (end - start) * 1000
+print("Elapsed Time: {:.2f} milliseconds".format(elasped_time_ms))
+
 
 #########    #########
 ### Test Functions ###
@@ -109,3 +137,6 @@ def test_count_twin_primes():
     assert count_twin_primes(10000) == 205
 
 test_is_prime()
+test_count_primes()
+test_is_divisible_by()
+test_count_primes()
