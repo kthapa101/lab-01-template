@@ -9,14 +9,45 @@ import time
 ###
 
 def is_divisible_by(num, i):
-    # TO-DO
-    # Implement this function
-    pass # remove this line
+    print("num: {} i: {}".format(num,i))
+    if((num % i) == 0):
+        return True
+    else:
+        return False
+    #pass # remove this line
+
+def is_prime(number):
+    if number <= 1:
+        return False
+    for i in range(2, int(number**0.5) + 1):
+        if number % i == 0:
+            return False
+    return True
+
+# Test the function
+num = 8
+if is_prime(num):
+    print(f"{num} is a prime number.")
+else:
+    print(f"{num} is not a prime number.")
 
 def is_prime(num):
-    # TO-DO
-    # Implement this function
-    pass # remove this line
+    # Handle edge cases
+    if num <= 1:
+        return False
+    if num <= 3:
+        return True
+    if num % 2 == 0 or num % 3 == 0:
+        return False
+    
+    # Check for factors from 5 to sqrt(n)
+    i = 5
+    while i * i <= num:
+        if num % i == 0 or num % (i + 2) == 0:
+            return False
+        i += 6
+    return True
+is_prime(3)
 
 def generate_primes(upper_bound):
     # TO-DO
@@ -24,9 +55,11 @@ def generate_primes(upper_bound):
     pass # remove this line
 
 def count_primes(upper_bound):
-    # TO-DO
-    # Implement this function
-    pass # remove this line
+    count = 0
+    for num in range(2, upper_bound + 1):
+        if is_prime(num):
+            count += 1
+    return count
 
 def generate_twin_primes(upper_bound):
     # TO-DO
@@ -74,3 +107,5 @@ def test_count_twin_primes():
     assert count_twin_primes(100) == 8
     assert count_twin_primes(1000) == 35
     assert count_twin_primes(10000) == 205
+
+test_is_prime()
